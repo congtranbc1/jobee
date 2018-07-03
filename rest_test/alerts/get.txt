@@ -1,0 +1,1 @@
+{"requestUrl":"http://localhost:3000/api/alerts.xml?ids=55","requestMethod":"GET","requestBody":"","headers":["Content-Type","application/xml"]}

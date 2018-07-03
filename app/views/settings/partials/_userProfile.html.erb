@@ -1,0 +1,72 @@
+<div id="setContainer" class="setContainer">
+	
+	<div style="width: 711px;margin: auto;">
+	<div class="setCalendar radius7 boxShadow">
+		<div class="setHeader snRadiusTopLeft snRadiusTopRight" style="background-color: #7a0038;">
+			<div class="settingTitle">
+				<div id="closeSetting" class="setCloseBtn radius40" onclick="closeSetting();" title="Close"><i class="fa fa-close"></i></div>
+				<label id="setTitle" class="setTitle">Profiles</label>
+			</div>
+		</div>
+		<div class="setContent" id="userProfileCnt">
+			
+			<!-- start alert content -->
+			<div class="calDetail">
+				<div class="calDetaiCnt radius8">
+					<table border="0">
+						<tr>
+							<td colspan="2" align="center">
+								<div style="width: 100%;height: 50px;overflow: hidden;">
+									<img src="/images/vigcal/def_avatar.png" width="50px" />
+								</div>
+								<p style="width: 100%;margin-bottom: 6px;"><b><%=  session[SESSION_USER_EMAIL] %></b></p>
+								<input type="hidden" id="uEmail" value="<%=  session[SESSION_USER_EMAIL] %>" />
+							</td>
+						</tr>
+						<tr>
+							<td class="setCol1"><label class="setTitleCnt">First Name</label></td>
+							<td class="setCol2">
+								<input type="text" name="fname" id="fname" placeholder="First name" value="<%= @user.FirstName %>"/>
+							</td>
+						</tr>
+						<tr>
+							<td class="setCol1"><label class="setTitleCnt">Last Name</label></td>
+							<td class="setCol2">
+								<input type="text" name="lname" id="lname" placeholder="Last name" value="<%= @user.LastName %>"/>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2"><div style="width: 100%; border-bottom: solid 1px #CCCCCC;"></div></td>
+						</tr>
+						<tr>
+							<td class="setCol1"><label class="setTitleCnt">Old Password</label></td>
+							<td class="setCol2">
+								<input type="password" placeholder="Old password" name="oldpass" id="oldpass" />
+							</td>
+						</tr>
+						<tr>
+							<td class="setCol1"><label class="setTitleCnt">New Password</label></td>
+							<td class="setCol2">
+								<input type="password" placeholder="New password" name="newpass" id="newpass" />
+							</td>
+						</tr>
+						<tr>
+							<td class="setCol1"><label class="setTitleCnt">Confirm New Password</label></td>
+							<td class="setCol2">
+								<input type="password" placeholder="Confirm new password" name="cfmnewpass" id="cfmnewpass" />
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="calBtn">
+					<input type="button" value="Save changes" id="saveProfile" onclick="saveProfiles();"/>
+				</div>
+			</div>		
+			<!-- alert content -->
+			
+		</div>
+	</div>
+
+	</div>
+	
+</div>

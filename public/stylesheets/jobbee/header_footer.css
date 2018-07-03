@@ -1,0 +1,228 @@
+
+.header{
+	min-height: 100px;
+	width: 100%;
+	background-color: #FFFFFF;
+	border-bottom: solid 1px #f3f3f4;
+	text-align: center;
+	float: left;
+}
+.logo{
+	width: 255px;
+	min-height: 80px;
+	/*border-bottom: solid 1px #e5e5e5;*/
+	float: left;
+	/*background-color: #F5F5F5;*/
+}
+.logo a img{
+	float: left;
+	margin-left: 10px;
+	height: 80px;
+}
+.companyName{
+	font-size: 30px;
+	color: #0000FF;
+	float: left;
+	/*width: 100%;*/
+	height: 40px;
+	text-align: left;
+	/*background-color: red;*/
+}
+.slogan{
+	font-size: 12px;
+	color: #B4B2B2;
+	float: left;
+	/*width: 50%;*/
+	height: 40px;
+	text-align: left;
+	font-style: italic;
+}
+.lang{
+	height: 20px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	width: 100%;
+	/*border-bottom: solid 1px #cccccc;*/
+	text-align: center;
+	font-size: 13px;
+}
+.lang a{
+	margin-left: 4px;
+	color: rgb(0, 0, 102);
+	margin-left: 25px;
+}
+.lang a:hover{
+	color: rgb(0, 102, 255);
+}
+.actionMenu{
+	width: 100%;
+	min-height: 80px;
+	/*border-bottom: solid 1px #e5e5e5;*/
+	float: right;
+	/*background-color: #e5e5e5;*/
+}
+
+.menuItem{
+	float: right;
+	height: 40px;
+	min-width: 40px;
+	/*background-color: red;*/
+	margin-right: 2px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right:20px;
+	padding-top:25px;
+	font-size: 16px;
+}
+.menuItem a div{
+	min-width: 40px;
+	min-height: 20px;
+	height:inherit;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	text-align: center;
+	font-size: 13px;
+	/*margin-top: -12px;*/
+	/*background-color: red;*/
+}
+.menuItem a div i{
+	font-size: 18px;
+}
+.colorIcon{
+	color: #666666;
+}
+.employer{
+	padding-left: 5px;
+	padding-right: 5px;
+	background-color: #E5E5E5;
+	color: #0B0B61;
+	border-left: solid 3px;
+	border-left-color: #0077B5;
+}
+.menu{
+	background-color: rgb(0, 0, 102);
+	color: #FFFFFF;
+	cursor: pointer;
+	/*padding:8px;*/
+}
+.menu:hover{
+	background-color: rgb(0, 0, 255);
+}
+.search{
+	background-color: rgb(179, 89, 0);
+	color: #FFFFFF;
+	cursor: pointer;
+	/*padding: 8px;*/
+}
+.search:hover{
+	background-color: rgb(255, 140, 26);
+}
+.signin{
+	/*background-color: #0099cc;*/
+	margin-right: 27px;
+	color: rgb(0, 0, 102);
+}
+.signin:hover{
+	/*background-color: #0000FF;*/
+	color: rgb(0, 102, 255);
+}
+
+.footer{
+	/*min-height: 30px;*/
+	width: 100%;
+	background-color: #e5e5e5;
+	text-align: center;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	/*bottom: 0px;*/
+	/*position: fixed;*/
+	border-top: solid 1px #e5e5e5;
+	float: left;
+}
+.footer p{
+	width: 100%;
+	float: left;
+}
+.jbFooter{
+	width: 80%;
+	padding-left: 10%;
+	padding-right: 10%;
+	min-height:40px; 
+}
+.ftBlockItem{
+	width: 30%;
+	min-height: 40px;
+	float: left;
+	text-align: left;
+}
+.ftMenu a{
+	width: 100%;
+	float: left;
+	text-align: left;
+	font-size: 13px;
+	height: 20px;
+	color: #666666;
+}
+.ftMenu a:hover{
+	color: #0000FF;
+}
+.ftSubcribe p{
+	font-size: 17px;
+	padding-bottom: 9px;
+}
+.ftSubcribe a div{
+	margin-right: 17px;
+	font-size: 20px;
+	color: #FFFFFF;
+	width: 40px;
+	height: 20px;
+	padding-top:10px;
+	padding-bottom:10px;
+	float: left;
+	text-align: center;
+}
+.iconFb{
+	background-color: rgb(0, 51, 128);
+}
+.iconTwt{
+	background-color: #55acee;
+}
+.iconGplus{
+	background-color: #D84B37;
+}
+.iconLinkedin{
+	background-color: #0077b5;
+}
+/*========== user profile =============*/
+.userProfile{
+	min-width: 100px;
+	min-height: 76px;
+	border: solid 1px #E5E5E5;
+	position: fixed;
+	/*right: 30px;*/
+	font-size: 13px;
+	background-color: #FFFFFF;
+	margin-top: 15px;
+	text-align: left;
+	overflow: hidden;
+	
+	display: none;
+	z-index: 999;
+}
+.profileItem{
+	width: 100%;
+	height: 20px;
+	padding: 9px 9px 9px 9px;
+	cursor: pointer;
+}
+.profileItem a{
+	color: #333333;
+}
+.profileItem:hover a{
+	color: rgb(0, 102, 255);
+}
+.profileItem:hover{
+	background-color: #f3f4f4;
+}
+
+

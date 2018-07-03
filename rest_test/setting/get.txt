@@ -1,0 +1,1 @@
+{"requestUrl":"http://localhost:3000/api/settings.xml?keyapi=eed1ff331bb96d7978ab40bea6668e10","requestMethod":"GET","requestBody":"","headers":["Content-Type","application/xml"]}

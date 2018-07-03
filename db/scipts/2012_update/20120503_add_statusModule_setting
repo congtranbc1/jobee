@@ -1,0 +1,1 @@
+ALTER TABLE `syncdata`.`SW_Setting` ADD COLUMN `StatusModules` VARCHAR(255)  NOT NULL DEFAULT 111 AFTER `Today`;

@@ -1,0 +1,57 @@
+<div class="calDetail">
+	<div class="calDetaiCnt radius8">
+		<div class="calList">
+			<table cellpadding="0" cellspacing="0" width="100%" border="0">
+				<%
+				if @cals and @cals.length > 0
+				%>
+				<tr class="calHeader">
+					<td width="13%" class="calCol1">Hidden</td>
+					<td width="82%" class="calCol2">VigCal</td>
+					<td width="5%" class="calCol3">
+						<!-- <a class="calNameObj" href="settings/tabCalendarDetail" data-remote="true"><i class="fa fa-plus"></i></a> -->
+					</td>
+				</tr>
+				<% 
+					# end 
+				%>
+				<%
+				# if @cals and @cals.length > 0
+					@cals.each do |cal|
+						id = cal.primaryKey
+				%>
+				<tr class="calRow">
+					<td class="calCol1">
+						<input type="checkbox" />
+					</td>
+					<td class="calCol2">
+						<div class="calName">
+							<i class="fa fa-star starLevel1"></i>
+							<label><a class="calNameObj" href="settings/tabEditCalendar?&id=<%= id %>" data-remote="true"><%= cal.calendarName %></a></label>
+						</div>
+					</td>
+					<td class="calCol3">
+						<a href="settings/delCalendar?&id=<%= id %>" data-remote="true">
+						<i class="fa fa-trash-o"></i></a>
+					</td>
+				</tr>
+				<%
+					end
+				else
+				%>
+				<tr class="calRow">
+					<td colspan="3" align="center">
+						No Calendar
+					</td>
+				</tr>
+				
+				<%
+				end
+				%>
+			</table>
+		</div>
+	</div>
+</div>		
+
+		
+

@@ -1,0 +1,1 @@
+ALTER TABLE `syncdata`.`SW_Setting` ADD COLUMN `HideFutureTask` INT(4)  NOT NULL DEFAULT 0 AFTER `StatusModules`;

@@ -1,0 +1,374 @@
+test
+1 - api request key
+	Ex: 
+	+ Request:
+		POST http://localhost:3000/api/KeyApi.xml?UserName=cong@leftcoastlogic.com&Pass=cong
+	+ Response:
+		++++++++++ case ok:++++++++++++++++++++++++++++++++++++++++++
+		<?xml version="1.0" encoding="UTF-8"?>
+		<key>
+		  <keyapi>c59c0141c0d0cd6ba408c9815c33d36c</keyapi>
+		</key>
+
+		+++++++++++case fail (error code = 2 - authentication invalid): +++++++++++++++++++
+		<?xml version="1.0" encoding="UTF-8"?>
+		<errors>
+		  <error type="integer">2</error>
+		</errors>
+		
+------------------------------------------------------------------------------------------------------------------------------------------------------		
+2 - Add work exception
+====== XML =========
++ Request:
+	POST http://localhost:3000/api/work_exception.xml?keyapi=c59c0141c0d0cd6ba408c9815c33d36c
+	<?xml version="1.0" encoding="UTF-8"?>
+	<workException>	
+		<ExceptionDate type="Date">2011-07-12</ExceptionDate>
+		<WorkID type="integer">67890</WorkID>	
+	</workException>
+	
++ Respond
+	+case ok
+	<?xml version="1.0" encoding="UTF-8"?>
+	<workException>
+	  <ExceptionDate type="datetime">2011-07-12T00:00:00Z</ExceptionDate>
+	  <WExceptionID type="integer">13</WExceptionID>
+	  <WorkID type="integer">67890</WorkID>
+	</workException>
+	
+	+ case authentication
+		<?xml version="1.0" encoding="UTF-8"?>
+		<errors>
+		  <error type="integer">2</error>
+		</errors>
+
+
+======== JSON ==========
++ Request:
+	POST http://localhost:3000/api/work_exception.json?keyapi=c59c0141c0d0cd6ba408c9815c33d36c
+	<?xml version="1.0" encoding="UTF-8"?>
+	<workException>	
+		<ExceptionDate type="Date">2011-07-12</ExceptionDate>
+		<WorkID type="integer">67890</WorkID>	
+	</workException>
+	
++ Respond:
+	+ case ok
+		{"workException":{"ExceptionDate":"2011-07-12T00:00:00Z","WExceptionID":14,"WorkID":67890}}
+	+ case authentication
+		{"error":2}
+	
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+3 - Update work exception
+======= XML ==========
++ Request:	
+	PUT http://localhost:3000/api/work_exception/99.xml?keyapi=c59c0141c0d0cd6ba408c9815c33d36c
+	
+	<?xml version="1.0" encoding="UTF-8"?>
+	<workException>
+	<ExceptionDate type="Date">2011-08-22</ExceptionDate>
+	<WorkID type="integer">566666</WorkID>
+	</workException>
+
++ Respond:
+	
+	+ case ok
+	<?xml version="1.0" encoding="UTF-8"?>
+	<workException>
+	  <ExceptionDate type="datetime">2011-08-22T00:00:00Z</ExceptionDate>
+	  <WExceptionID type="integer">9</WExceptionID>
+	  <WorkID type="integer">566666</WorkID>
+	</workException>
+
+	+ case not exist
+	<?xml version="1.0" encoding="UTF-8"?>
+	<errors>
+	  <error type="integer">8</error>
+	</errors>
+
+	+ case authentication
+	<?xml version="1.0" encoding="UTF-8"?>
+	<errors>
+	  <error type="integer">2</error>
+	</errors>
+
+
+======== JSON ========
++ Request:
+	PUT http://localhost:3000/api/work_exception/9.json?keyapi=c59c0141c0d0cd6ba408c9815c33d36c
+	<?xml version="1.0" encoding="UTF-8"?>
+	<workException>
+	<ExceptionDate type="Date">2011-08-22</ExceptionDate>
+	<WorkID type="integer">566666</WorkID>
+	</workException>
+		 
++ Respond
+	
+
+	+ case ok
+	{"workException":{"ExceptionDate":"2011-08-22T00:00:00Z","WExceptionID":9,"WorkID":566666}}
+	
+	+ case not exist
+	{"error":8}
+	
+	+ case authentication
+	{"error":2}
+	
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+4 - Delete work exception
+====== XML ==========
++ Request:
+	DELETE http://localhost:3000/api/work_exception/6.xml?keyapi=c59c0141c0d0cd6ba408c9815c33d36c 
+	
++ Respond:
+	+ case ok
+	<?xml version="1.0" encoding="UTF-8"?>
+	<deleted>
+	  <id type="integer">6</id>
+	</deleted>
+	
+	+ case not exist:
+	<?xml version="1.0" encoding="UTF-8"?>
+	<errors>
+	  <error type="integer">8</error>
+	</errors>
+
+	+ case authentication
+	<?xml version="1.0" encoding="UTF-8"?>
+	<errors>
+	  <error type="integer">2</error>
+	</errors>
+
+
+========== JSON =====
++ Request:
+	DELETE http://localhost:3000/api/work_exception/7.json?keyapi=c59c0141c0d0cd6ba408c9815c33d36c
+	
++ Respond:
+	+ case ok:
+	{"id":7}
+	
+	+ case not exist
+	{"error":8}
+	
+	+ case authentication
+	{"error":2}
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+5 - Get list work exception
+====== XML ==========
++ Request:
+	GET http://localhost:3000/api/work_exception/3.xml?keyapi=c59c0141c0d0cd6ba408c9815c33d36c
++ Respond
+	+ case ok
+		<?xml version="1.0" encoding="UTF-8"?>
+		<workException>
+		  <ExceptionDate type="datetime">2011-07-12T00:00:00Z</ExceptionDate>
+		  <WExceptionID type="integer">3</WExceptionID>
+		  <WorkID type="integer">67890</WorkID>
+		</workException>
+
+	+ case authentication
+		<?xml version="1.0" encoding="UTF-8"?>
+		<errors>
+		  <error type="integer">2</error>
+		</errors>
+
+
+======== JSON =======
++ Request:
+	GET http://localhost:3000/api/work_exception/3.json?keyapi=c59c0141c0d0cd6ba408c9815c33d36c
++ Respond
+	+ case ok
+	{"workException":{"ExceptionDate":"2011-07-12T00:00:00Z","WExceptionID":3,"WorkID":67890}}
+	
+	+ case authentication
+	{"error":2}
+
+##############-------------------------------------------------#####################
+6 - Add hyper note
+========= XML ===============
+ ========== request ============
+POST http://localhost:3000/api/hyper_notes.xml?keyapi=c59c0141c0d0cd6ba408c9815c33d36c 
+
+<?xml version="1.0" encoding="UTF-8"?>
+<hypernote>
+	<NoteID type="integer">12345</NoteID>
+	<WorkID type="integer">67890</WorkID>
+	<UserID type="integer">445</UserID>
+	<StartPosition type="integer">7</StartPosition>
+	<EndPosition type="integer">25</EndPosition>
+	<KeyWord>Test hyper note</KeyWord>
+	<CreateTime type="integer"></CreateTime>
+	<LastUpdate type="integer"></LastUpdate>
+</hypernote>
+ ====== respond ============
+ ++++ Case successful+++++++++++++++++++++++++++++++++++++++++++++++++
+ <?xml version="1.0" encoding="UTF-8"?>
+	<hypernote>
+	  <CreateTime type="integer">1310974249</CreateTime>
+	  <EndPosition type="integer">25</EndPosition>
+	  <HyperNoteID type="integer">20</HyperNoteID>
+	  <KeyWord>Test hyper note</KeyWord>
+	  <LastUpdate type="integer">1310974249</LastUpdate>
+	  <NoteID type="integer">12345</NoteID>
+	  <StartPosition type="integer">7</StartPosition>
+	  <UserID type="integer">561</UserID>
+	  <WorkID type="integer">67890</WorkID>
+	</hypernote>
+
+
+ ++++ case authentication invalid +++++++++++++++++++++++++++++++++++++
+ <?xml version="1.0" encoding="UTF-8"?>
+	<errors>
+	  <error type="integer">2</error>
+	</errors>
+
+=========== JSON =================
++ Request:
+	POST http://localhost:3000/api/hyper_notes.json?keyapi=c59c0141c0d0cd6ba408c9815c33d36c
+	<?xml version="1.0" encoding="UTF-8"?>
+	<hypernote>
+	
+	<NoteID type="integer">12345</NoteID>
+	<WorkID type="integer">67890</WorkID>
+	<UserID type="integer">445</UserID>
+	<StartPosition type="integer">7</StartPosition>
+	<EndPosition type="integer">25</EndPosition>
+	<KeyWord>Test hyper note</KeyWord>
+	<CreateTime type="integer"></CreateTime>
+	<LastUpdate type="integer"></LastUpdate>
+	
+	</hypernote>
+
++ Respond
+	+ case ok
+	{"hypernote":{"CreateTime":1310977326,"EndPosition":25,"HyperNoteID":23,"KeyWord":"Test hyper note","LastUpdate":1310977326,"NoteID":12345,"StartPosition":7,"UserID":561,"WorkID":67890}}
+	
+	+ case authentication
+	{"error":2}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+7 - Update hyper note
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+8 - Delete hyper note
+====== XML ==========
++ Request:
+	DELETE	http://localhost:3000/api/hyper_notes/5.xml?keyapi=c59c0141c0d0cd6ba408c9815c33d36c
++ Respond:
+	+ case ok
+		<?xml version="1.0" encoding="UTF-8"?>
+		<deleted>
+		  <id type="integer">6</id>
+		</deleted>
+
+	+ case not exist
+		<?xml version="1.0" encoding="UTF-8"?>
+		<errors>
+		  <error type="integer">8</error>
+		</errors>
+	
+========= JSON ======
++ Request:
+	DELETE	http://localhost:3000/api/hyper_notes/5.json?keyapi=c59c0141c0d0cd6ba408c9815c33d36c
+	
++ Respond:
+	+ case ok:
+		{"id":5}
+	+ case note exist
+		{"error":8}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+9 - Get list hyper note		
+======= XML ===========
++ Request
+	GET http://localhost:3000/api/hyper_notes.xml?keyapi=c59c0141c0d0cd6ba408c9815c33d36c
+
++ Respond	
+	<?xml version="1.0" encoding="UTF-8"?>
+	<hypernotes type="array">
+	  <hypernote>
+	    <CreateTime type="integer">1310958062</CreateTime>
+	    <EndPosition type="integer">25</EndPosition>
+	    <HyperNoteID type="integer">11</HyperNoteID>
+	    <KeyWord>Test hyper note</KeyWord>
+	    <LastUpdate type="integer">1310958062</LastUpdate>
+	    <NoteID type="integer">12345</NoteID>
+	    <StartPosition type="integer">7</StartPosition>
+	    <WorkID type="integer">67890</WorkID>
+	  </hypernote>
+	  <hypernote>
+	    <CreateTime type="integer">1310958275</CreateTime>
+	    <EndPosition type="integer">25</EndPosition>
+	    <HyperNoteID type="integer">12</HyperNoteID>
+	    <KeyWord>Test hyper note</KeyWord>
+	    <LastUpdate type="integer">1310958275</LastUpdate>
+	    <NoteID type="integer">12345</NoteID>
+	    <StartPosition type="integer">7</StartPosition>
+	    <WorkID type="integer">67890</WorkID>
+	  </hypernote>
+	</hypernotes>  
+  
+======== JSON =========
++ Request
+	GET http://localhost:3000/api/hyper_notes.json?keyapi=c59c0141c0d0cd6ba408c9815c33d36c
+
++ Respond	
+	[{"hypernotes":{"CreateTime":1310958062,"EndPosition":25,"HyperNoteID":11,"KeyWord":"Test hyper note","LastUpdate":1310958062,"NoteID":12345,"StartPosition":7,"WorkID":67890}},
+	{"hypernotes":{"CreateTime":1310958275,"EndPosition":25,"HyperNoteID":12,"KeyWord":"Test hyper note","LastUpdate":1310958275,"NoteID":12345,"StartPosition":7,"WorkID":67890}}]
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+10 - Get a hyper note
+=========== XML ================
++ Request:
+	GET http://localhost:3000/api/hyper_notes/4.xml?keyapi=c59c0141c0d0cd6ba408c9815c33d36c
+	(number [4] is ID of hyper note, forat XML)
++ Respond
+	+ Case OK *****
+	<?xml version="1.0" encoding="UTF-8"?>
+	<hypernote>
+	  <CreateTime type="integer">464655</CreateTime>
+	  <EndPosition type="integer">25</EndPosition>
+	  <HyperNoteID type="integer">4</HyperNoteID>
+	  <KeyWord>Test hyper note</KeyWord>
+	  <LastUpdate type="integer">798552</LastUpdate>
+	  <NoteID type="integer">12345</NoteID>
+	  <StartPosition type="integer">7</StartPosition>
+	  <UserID type="integer">445</UserID>
+	  <WorkID type="integer">67890</WorkID>
+	</hypernote>
+	
+	+ Case fail **** - not existed
+		<?xml version="1.0" encoding="UTF-8"?>
+		<hypernote>
+		  <error type="integer">8</error>
+		</hypernote>
+
+	+ Case authentication invalid
+	<?xml version="1.0" encoding="UTF-8"?>
+	<errors>
+	  <error type="integer">2</error>
+	</errors>
+
+========= JSON ================
++ Request:
+	GET http://localhost:3000/api/hyper_notes/4.json?keyapi=c59c0141c0d0cd6ba408c9815c33d36c
++ Respond
+	+ Case ok
+	{"hypernote":{"CreateTime":464655,"EndPosition":25,"HyperNoteID":4,"KeyWord":"Test hyper note","LastUpdate":798552,"NoteID":12345,"StartPosition":7,"UserID":445,"WorkID":67890}}
+	+ Case authentication
+		{"error":2}
+	+ Case not exist
+		{"error":8}
+	
+
+
+

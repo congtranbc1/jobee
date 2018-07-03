@@ -1,0 +1,132 @@
+<div class="calDetail">
+	<form method="post" action="settings/updateSettings?objType=<%= OBJ_NOTE_TYPE %>" data-remote="true">
+	<div class="calDetaiCnt radius8">
+		<table border="0">
+			<tr>
+				<td class="setCol1"><label class="setTitleCnt">Default for new note</label></td>
+				<td width class="setCol2"></td>
+			</tr>
+			<tr>
+				<td class="setCol1"><label class="setTitleCnt">Calendar</label></td>
+				<td class="setCol2">
+					<select name="setCal" id="setCal">
+						<%
+							if @cals and @cals.length > 0
+								@cals.each do |cal|
+									calNm = cal.calendarName.to_s.strip
+									sel = ''
+									if cal.primaryKey == @set.defaultNoteCalendarID
+										sel = 'selected="selected"'
+									end
+						%>
+						<option <%= sel %> value="<%= cal.primaryKey %>"><%= calNm %></option>
+						<%
+								end #for
+							end #if 	
+						%>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="setCol1"><label class="setTitleCnt">Context</label></td>
+				<td class="setCol2">
+					<select name="setContext" id="setContext">
+						<%
+							if @contexts and @contexts.length > 0
+								@contexts.each do |context|
+									ct = context.contextName.to_s.strip
+									sel = ''
+									if context.primaryKey == @set.defaultNoteContextID
+										sel = 'selected="selected"'
+									end
+						%>
+						<option <%= sel %> value="<%= context.primaryKey %>"><%= ct %></option>
+						<%
+								end #for
+							end #if 	
+						%>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="setCol1"><label class="setTitleCnt">Font</label></td>
+				<td class="setCol2">
+					<select>
+						<option>Helvetica</option>
+						<option>Comic</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="setCol1"><label class="setTitleCnt">Font size</label></td>
+				<td class="setCol2">
+					<select>
+						<option>12 pt</option>
+						<option>17 pt</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="setCol1"><label class="setTitleCnt">Text color</label></td>
+				<td class="setCol2">
+					<div class="callColor" style="background-color: #269628;"></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="setCol1"><label class="setTitleCnt">Highlight color</label></td>
+				<td class="setCol2">
+					<div class="callColor" style="background-color: #269628;"></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="setCol1"><label class="setTitleCnt">Alignment</label></td>
+				<td class="setCol2">
+					<select>
+						<option>Left</option>
+						<option>Right</option>
+						<option>Center</option>
+					</select> 
+				</td>
+			</tr>
+			<tr>
+				<td class="setCol1"><label class="setTitleCnt">Input style for new note</label></td>
+				<td class="setCol2">
+					<div class="tabView dayViewTab snRadiusLTB setTab">Text</div>
+					<div class="tabView listViewTab snRadiusRTB setTab">Drawing</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="setCol1"><label class="setTitleCnt">Background style</label></td>
+				<td class="setCol2">
+					<div class="callColor" style="background-color: #269628;"></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="setCol1" valign="top"><label class="setTitleCnt">Show note on</label></td>
+				<td class="setCol2">
+					<div class="calSyncWith"><input type="checkbox" id="taskDW" /><label for="taskDW">Day view</label></div>
+					<div class="calSyncWith"><input type="checkbox" id="taskWW" /><label for="taskWW">Week view</label></div>
+					<div class="calSyncWith"><input type="checkbox" id="taskMW" /><label for="taskMW">Month view</label></div>
+					<div class="calSyncWith"><input type="checkbox" id="taskLW" /><label for="taskLW">List view</label></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="setCol1"><label class="setTitleCnt">Note section height in view</label></td>
+				<td class="setCol2">
+					<div class="tabView dayViewTab snRadiusLTB setTab">Default</div>
+					<div class="tabView listViewTab snRadiusRTB setTab">70%</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="setCol1"></td>
+				<td class="setCol2">
+					<input type="button" value="Delete duplicated task" />
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="calBtn">
+		<input type="submit" value="Save changes" />
+	</div>
+	</form>
+</div>		

@@ -1,0 +1,21 @@
+
+en:
+  Focus: Focus
+  SmartDay: SmartDay
+  SmartShare: SmartShare
+  SmartNotes: SmartNotes
+  DoMail: DoMail  	
+  activerecord:
+    attributes:
+      work:
+        project_table: "Project"
+      user:
+        FirstName: "First Name"
+        LastName: "Last Name"
+      sw_setting:
+        WorkingHourStart: "Working Time Start"
+        WorkingHourEnd: "Working Time End"
+    errors:
+      messages:
+        blank: "can not be blank"
+        

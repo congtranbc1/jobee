@@ -1,0 +1,101 @@
+<div class="calDetail">
+	<div class="calDetaiCnt radius8">
+		<table border="0">
+			<tr>
+				<td class="setCol1" valign="top"><label class="setTitleCnt">Skin style</label></td>
+				<td width class="setCol2" valign="top">
+					<div class="callColor bg<%= session[SESSION_SET_BG] %>" id="skinSelItem" onclick="showSkinBG();"></div>
+					<%= render :partial => 'settings/partials/skinColorBox'%>
+				</td>
+			</tr>
+			<tr>
+				<td class="setCol1"><label class="setTitleCnt">Organization style</label></td>
+				<td class="setCol2">
+					<div class="tabView dayViewTab snRadiusLTB setTab">Folders</div>
+					<div class="tabView listViewTab snRadiusRTB setTab">Lists</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="setCol1"><label class="setTitleCnt">Badge for</label></td>
+				<td class="setCol2">
+					<div class="tabView dayViewTab snRadiusLTB setTab">Due Task</div>
+					<div class="tabView monthViewTab setTab">Active Tasks</div>
+					<div class="tabView listViewTab snRadiusRTB setTab">None</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="setCol1"><label class="setTitleCnt">Show weather information</label></td>
+				<td class="setCol2"><input type="checkbox" /></td>
+			</tr>
+			<tr>
+				<td class="setCol1"><label class="setTitleCnt">Weather temp unit</label></td>
+				<td class="setCol2">
+					<div class="tabView dayViewTab snRadiusLTB setTab">°C</div>
+					<div class="tabView weekViewTab setTab">°F</div>
+					<div class="tabView listViewTab snRadiusRTB setTab">K</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="setCol1"><label class="setTitleCnt">Show lunar date</label></td>
+				<td class="setCol2"><input type="checkbox" /></td>
+			</tr>
+			<tr>
+				<td class="setCol1"><label class="setTitleCnt">Week starts from</label></td>
+				<td class="setCol2">
+					<select>
+						<option value="sun">Sunday</option>
+						<option value="mon">Monday</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="setCol1" valign="top"><label class="setTitleCnt">Day off</label></td>
+				<td class="setCol2">
+					<div class="calSyncWith"><input type="checkbox" id="doMon" /><label for="doMon">Monday</label></div>
+					<div class="calSyncWith"><input type="checkbox" id="doTue" /><label for="doTue">Tuesday</label></div>
+					<div class="calSyncWith"><input type="checkbox" id="doWed" /><label for="doWed">Wednesday</label></div>
+					<div class="calSyncWith"><input type="checkbox" id="doThu" /><label for="doThu">Thursday</label></div>
+					<div class="calSyncWith"><input type="checkbox" id="doFri" /><label for="doFri">Friday</label></div>
+					<div class="calSyncWith"><input type="checkbox" id="doSat" /><label for="doSat">Saturday</label></div>
+					<div class="calSyncWith"><input type="checkbox" id="doSun" /><label for="doSun">Sunday</label></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="setCol1"><label class="setTitleCnt">Hide day of week/month</label></td>
+				<td class="setCol2"><input type="checkbox" /></td>
+			</tr>
+			<tr>
+				<td class="setCol1"><label class="setTitleCnt">Show balance time</label></td>
+				<td class="setCol2"><input type="checkbox" /></td>
+			</tr>
+			<tr>
+				<td class="setCol1"><label class="setTitleCnt">Count balance time in</label></td>
+				<td class="setCol2">
+					<div class="tabView dayViewTab snRadiusLTB setTab">All day</div>
+					<div class="tabView listViewTab snRadiusRTB setTab">Date time</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="setCol1"><label class="setTitleCnt">Delete achieved  data older than</label></td>
+				<td class="setCol2">
+					<select>
+						<option>1 month</option>
+						<option>2 months</option>
+					</select>
+					<input type="button" value="Delete" />
+				</td>
+			</tr>
+			<tr>
+				<td class="setCol1"><label class="setTitleCnt">Warn before deleting</label></td>
+				<td class="setCol2"><input type="checkbox" /></td>
+			</tr>
+			<tr>
+				<td class="setCol1"><label class="setTitleCnt">Reset all tips</label></td>
+				<td class="setCol2"><input type="button" value="Reset" /></td>
+			</tr>
+		</table>
+	</div>
+	<div class="calBtn">
+		<input type="button" value="Save changes" />
+	</div>
+</div>		

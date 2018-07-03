@@ -1,0 +1,18 @@
+ALTER TABLE `syncdata`.`categories` ADD COLUMN `order_category` INT  DEFAULT 0 AFTER `invisible`;
+ALTER TABLE `syncdata`.`categories` ADD COLUMN `app_register` INT  DEFAULT 0 AFTER `order_category`;
+
+
+--------- create row default for my smart day -----
+INSERT INTO `syncdata`.`AppRegister` (
+`ID` ,
+`AppRegisterID` ,
+`AppID` ,
+`AppName` ,
+`Private`
+)
+VALUES (
+NULL , 'mysmartday', '2', 'My Smart Day', '1'
+);
+
+UPDATE `syncdata`.`AppRegister` SET `ID` = '0',
+`AppRegisterID` = 'mysmartday' WHERE `AppRegister`.`AppRegisterID` ='mysmartday';

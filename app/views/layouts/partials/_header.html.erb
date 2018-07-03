@@ -1,0 +1,66 @@
+<div class="header">
+	<!-- show multiple langgue -->
+	<!-- <div class="lang">
+		<a href="#"><i class="fa fa-envelope-o"></i> Email me jobs</a>
+		<a href="#"><i class="fa fa-globe"></i> English</a>
+	</div> -->
+	<!-- show logo of site -->
+	<!-- <div class="logo">
+		<a href="/"><img src="/images/logo.jpg" /></a>
+		<a href="/"><div class="companyName">Jobs bee</div></a>
+		<div class="slogan">Make your life happier!</div>
+	</div> -->
+	<!-- search, sign in  -->
+	<div class="actionMenu">
+		<div class="logo">
+			<a href="/"><img src="/images/logo.jpg" /></a>
+			<a href="/"><div class="companyName">AC Pro</div></a>
+			<div class="slogan">Make your life happier!</div>
+		</div>
+		
+		<div class="menuItem">
+			<a href="#">
+				<div class="employer">
+					<p>EMPLOYERS</p>
+					<p>Post Jobs and Find Talents</p>
+				</div>
+			</a>
+		</div>
+		
+		<%
+			if session[SESSION_USER_FULL_NAME]
+		%>
+		<div class="menuItem">
+			<a href="#" id="userAccount"><div class="radius80 menu iconLinkedin"><i class="fa fa-child"></i></div></a>
+			<div id="userProfile" class="userProfile popup">
+				<div class="profileItem"><a href="/profile"><i class="fa fa-cogs"></i> My profile</a></div>
+				<div class="profileItem"><a href="/sign_out"><i class="fa fa-sign-out"></i> Sign out</a></div>
+			</div>
+		</div>
+		<%
+			end
+		%>
+		
+		<%
+			if !session[SESSION_USER_FULL_NAME]
+		%>
+		<div class="menuItem">
+			<a href="/sign_in" class="signin"><div>Sign in</div></a>
+		</div>
+		<div class="menuItem">
+			<a href="/sign_up" class="signin"><div>Sign up</div></a>
+		</div>
+		<%
+			end
+		%>
+		<div class="menuItem">
+			<a href="#"><div class="radius80 colorIcon"><i class="fa fa-bell-o"></i></div></a>
+		</div>
+		<div class="menuItem">
+			<a href="#"><div class="radius80 colorIcon"><i class="fa fa-flag-o"></i></div></a>
+		</div>
+		<div class="menuItem">
+			<a href="#"><div class="radius80 search"><i class="fa fa-search"></i></div></a>
+		</div>
+	</div>
+</div>

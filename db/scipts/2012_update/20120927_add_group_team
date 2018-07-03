@@ -1,0 +1,39 @@
+CREATE TABLE  `syncdata`.`groups` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL DEFAULT '',
+  `user_id` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `create_time` int(11) DEFAULT '0',
+  `last_update` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1
+
+CREATE TABLE  `syncdata`.`groups_members` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `group_id` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `member_id` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `create_time` int(11) NOT NULL DEFAULT '0',
+  `last_update` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1
+
+CREATE TABLE  `syncdata`.`members` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` bigint(20) NOT NULL DEFAULT '0',
+  `name` varchar(255) NOT NULL DEFAULT '0',
+  `email` varchar(255) NOT NULL DEFAULT '',
+  `role` varchar(255) NOT NULL DEFAULT '',
+  `status` int(11) NOT NULL DEFAULT '0',
+  `create_time` int(11) NOT NULL DEFAULT '0',
+  `last_update` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1
+
+--update tasks table
+ALTER TABLE `syncdata`.`tasks` ADD COLUMN `assignee_email` VARCHAR(255)  NOT NULL DEFAULT '' AFTER `participants_count`,
+ ADD COLUMN `delegate_status` INT(11)  NOT NULL DEFAULT 0 AFTER `assignee_email`,
+ ADD COLUMN `assignee_order` INT  NOT NULL DEFAULT 0 AFTER `delegate_status`,
+ ADD COLUMN `token` VARCHAR(255)  NOT NULL  DEFAULT '' AFTER `assignee_order`;
+
+ -------------
+ ALTER TABLE `syncdata`.`participants` ADD COLUMN `sent_times` INT  NOT NULL DEFAULT 0 AFTER `last_update`;
+ 

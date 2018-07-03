@@ -1,0 +1,94 @@
+<div class="calDetail">
+	<form method="post" action="settings/updateSettings?objType=<%= OBJ_TASK_TYPE %>" data-remote="true">
+	<div class="calDetaiCnt radius8">
+		<table border="0">
+			<tr>
+				<td class="setCol1"><label class="setTitleCnt">Default for new task</label></td>
+				<td width class="setCol2"></td>
+			</tr>
+			<tr>
+				<td class="setCol1"><label class="setTitleCnt">Calendar</label></td>
+				<td class="setCol2">
+					<select name="setCal" id="setCal">
+						<%
+							if @cals and @cals.length > 0
+								@cals.each do |cal|
+									calNm = cal.calendarName.to_s.strip
+									sel = ''
+									if cal.primaryKey == @set.defaultTaskCalendarID
+										sel = 'selected="selected"'
+									end
+						%>
+						<option <%= sel %> value="<%= cal.primaryKey %>"><%= calNm %></option>
+						<%
+								end #for
+							end #if 	
+						%>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="setCol1"><label class="setTitleCnt">Context</label></td>
+				<td class="setCol2">
+					<select name="setContext" id="setContext">
+						<%
+							if @contexts and @contexts.length > 0
+								@contexts.each do |context|
+									ct = context.contextName.to_s.strip
+									sel = ''
+									if context.primaryKey == @set.defaultTaskContextID
+										sel = 'selected="selected"'
+									end
+						%>
+						<option <%= sel %> value="<%= context.primaryKey %>"><%= ct %></option>
+						<%
+								end #for
+							end #if 	
+						%>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="setCol1"><label class="setTitleCnt">Length</label></td>
+				<td class="setCol2">
+					<div class="tabView dayViewTab snRadiusLTB setTab">30 mins</div>
+					<div class="tabView monthViewTab setTab">1 hour</div>
+					<div class="tabView listViewTab snRadiusRTB setTab">2 hours</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="setCol1" valign="top"><label class="setTitleCnt">Show task on</label></td>
+				<td class="setCol2">
+					<div class="calSyncWith"><input type="checkbox" id="taskDW" /><label for="taskDW">Day view</label></div>
+					<div class="calSyncWith"><input type="checkbox" id="taskWW" /><label for="taskWW">Week view</label></div>
+					<div class="calSyncWith"><input type="checkbox" id="taskMW" /><label for="taskMW">Month view</label></div>
+					<div class="calSyncWith"><input type="checkbox" id="taskLW" /><label for="taskLW">List view</label></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="setCol1"><label class="setTitleCnt">Day task will be</label></td>
+				<td class="setCol2">
+					<div class="tabView dayViewTab snRadiusLTB tabTaskSet">Start & Due tasks</div>
+					<div class="tabView monthViewTab tabTaskSet">Start tasks</div>
+					<div class="tabView listViewTab snRadiusRTB tabTaskSet">Due tasks</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="setCol1"><label class="setTitleCnt">Show archieved task in view</label></td>
+				<td class="setCol2">
+					<input type="checkbox" />
+				</td>
+			</tr>
+			<tr>
+				<td class="setCol1"></td>
+				<td class="setCol2">
+					<input type="button" value="Delete duplicated task" />
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="calBtn">
+		<input type="submit" value="Save changes" />
+	</div>
+	</form>
+</div>		

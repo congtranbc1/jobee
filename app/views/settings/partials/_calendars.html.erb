@@ -1,0 +1,64 @@
+<div id="setContainer" class="setContainer">
+	
+	<div style="width: 711px;margin: auto;">
+	<div class="setCalendar radius7 boxShadow">
+		<div id="setBackground" class="setHeader snRadiusTopLeft snRadiusTopRight <%= 'bg' + session[SESSION_SET_BG].to_s %>">
+			<div class="settingTitle">
+				<div id="closeSetting" class="setCloseBtn radius40" onclick="closeSetting();" title="Close"><i class="fa fa-close"></i></div>
+				<label id="setTitle" class="setTitle">Calendars</label>
+				<!-- calendar -->
+				<a class="calNameObj" id="addNewObj" href="settings/tabCalendarDetail" data-remote="true">
+					<div class="settingAddbtn iconTopMenu iconAddTopMenu"></div>
+				</a>
+				
+			</div>
+			<div class="setMenuBar">
+				<a href="/settings/tabCalendar" data-remote="true">
+					<!-- <i class="fa fa-calendar-check-o"></i> -->
+					<div class="setMenuItem setMenuItemActive iconCalendar" data-mode="Calendars">Calendars</div>
+					</a>
+				<a href="/settings/tabGeneral" data-remote="true">
+					<!-- <i class="fa fa-cogs"></i> -->
+					<div class="setMenuItem iconSetting" data-mode="General">General</div>
+					</a>
+				<a href="/settings/tabContext" data-remote="true">
+					<!-- <i class="fa fa-home"></i> -->
+					<div class="setMenuItem iconContext" data-mode="Contexts">Context</div>
+					</a>
+				<a href="/settings/tabEvent" data-remote="true">
+					<!-- <i class="fa fa-magic"></i> -->
+					<div class="setMenuItem iconEvent" data-mode="Event">Event</div>
+					</a>
+				<a href="/settings/tabTask" data-remote="true">
+					<!-- <i class="fa fa-check-square-o"></i> -->
+					<div class="setMenuItem iconTask" data-mode="Task">Task</div>
+					</a>
+				<a href="/settings/tabNote" data-remote="true">
+					<!-- <i class="fa fa-list-alt"></i> -->
+					<div class="setMenuItem iconNote" data-mode="Note">Note</div>
+					</a>
+				<a href="/settings/tabInvitation" data-remote="true">
+					<!-- <i class="fa fa-envelope-o"></i> -->
+					<div class="setMenuItem iconInvitation" data-mode="Invitation">Invitation</div>
+					</a>
+				<a href="/settings/tabSecurity" data-remote="true">
+					<!-- <i class="fa fa-lock"></i> -->
+					<div class="setMenuItem iconSecurity" data-mode="Security">Security</div>
+					</a>
+				<a href="/settings/tabAlert" data-remote="true">
+					<!-- <i class="fa fa-bell-o"></i> -->
+					<div class="setMenuItem iconAlert" data-mode="Alert">Alert</div>
+					</a>
+				<a href="/settings/tabBackup" data-remote="true">
+					<!-- <i class="fa fa-refresh"></i> -->
+					<div class="setMenuItem iconBackup" data-mode="Backup">Backup</div>
+					</a>
+			</div>	
+		</div>
+		<div class="setContent" id="setContent">
+			<%= render :partial => 'settings/partials/tabCalendar'%>
+		</div>
+	</div>
+	</div>
+	
+</div>

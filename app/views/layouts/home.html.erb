@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="keywords" content="find job, find jobs, find work, find works, it jobs, software" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="shortcut icon" href="/images/favicon.ico" />
+		<title>AC Pro</title>
+		
+		<%= stylesheet_link_tag "jquery_ui/jquery-ui.theme", "css/font-awesome", 
+			"jobbee/home", "jobbee/header_footer",
+			:cache => "generate/beejobs" %>
+		
+		<%= javascript_include_tag :defaults, 
+			"jquery_plugin/jquery.ui.core.min", "jquery_plugin/jquery.ui.widget.min","jquery_plugin/jquery.ui.mouse.min",
+			"jquery/jquery.nicescroll.min", "jquery_plugin/jquery.cycle.all",
+			"jobbee/general", "jobbee/profile",
+			:cache => "generate/beejobs"%>
+			
+		<%= csrf_meta_tag %>
+		
+	</head>
+	<body>
+		
+	    <%= render :partial => 'layouts/partials/header'%>
+		
+	    <%= yield %>
+		
+		<%= render :partial => 'layouts/partials/footer'%>
+		
+		
+		<script type="text/javascript" charset="utf-8">
+			$(document).ready(function(){
+				try{
+					//for home page
+					$('#homeBanner').cycle({
+						fx:     'scrollLeft', //,scrollDown,scrollRight,scrollUp,fade
+					    speed:  'slow',//'slow'
+				        timeout: 6000,
+				        pager:  '#nav'//,
+						// slideExpr: 'p'
+					});
+					
+				}
+				catch(err){
+					
+				}
+				
+				
+				
+				
+			});
+			
+			
+		</script>
+		
+	</body>
+</html>

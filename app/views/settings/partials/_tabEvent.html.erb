@@ -1,0 +1,79 @@
+<div class="calDetail">
+	<form method="post" action="settings/updateSettings?objType=<%= OBJ_EVENT_TYPE %>" data-remote="true">
+	<div class="calDetaiCnt radius8">
+		<table border="0">
+			<tr>
+				<td class="setCol1"><label class="setTitleCnt">Default for new event</label></td>
+				<td width class="setCol2"></td>
+			</tr>
+			<tr>
+				<td class="setCol1"><label class="setTitleCnt">Calendar</label></td>
+				<td class="setCol2">
+					<select name="setCal" id="setCal">
+						<%
+							if @cals and @cals.length > 0
+								@cals.each do |cal|
+									calNm = cal.calendarName.to_s.strip
+									sel = ''
+									if cal.primaryKey == @set.defaultEventCalendarID
+										sel = 'selected="selected"'
+									end
+						%>
+						<option <%= sel %> value="<%= cal.primaryKey %>"><%= calNm %></option>
+						<%
+								end #for
+							end #if 	
+						%>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="setCol1"><label class="setTitleCnt">Context</label></td>
+				<td class="setCol2">
+					<select name="setContext" id="setContext">
+						<%
+							if @contexts and @contexts.length > 0
+								@contexts.each do |context|
+									ct = context.contextName.to_s.strip
+									sel = ''
+									if context.primaryKey == @set.defaultEventContextID
+										sel = 'selected="selected"'
+									end
+						%>
+						<option <%= sel %> value="<%= context.primaryKey %>"><%= ct %></option>
+						<%
+								end #for
+							end #if 	
+						%>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="setCol1"><label class="setTitleCnt">Length</label></td>
+				<td class="setCol2">
+					<div class="tabView dayViewTab snRadiusLTB setTab">30 mins</div>
+					<div class="tabView monthViewTab setTab">1 hour</div>
+					<div class="tabView listViewTab snRadiusRTB setTab">2 hours</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="setCol1"><label class="setTitleCnt">Recurring events in month view</label></td>
+				<td class="setCol2">
+					<select>
+						<option>Hide all recurring event's instance</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="setCol1"></td>
+				<td class="setCol2">
+					<input type="button" value="Delete duplicated events" />
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="calBtn">
+		<input type="submit" value="Save changes" />
+	</div>
+	</form>
+</div>		

@@ -1,0 +1,4 @@
+ALTER TABLE `syncdata`.`HyperLink` MODIFY COLUMN `KeyWord` varchar(510),
+	MODIFY COLUMN `StartPosition` INTEGER DEFAULT 0,
+	MODIFY COLUMN `EndPosition` INTEGER  DEFAULT 0;
+

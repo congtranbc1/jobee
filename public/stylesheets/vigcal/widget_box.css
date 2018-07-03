@@ -1,0 +1,185 @@
+.wgMenu{
+	width: 100%;
+	float: left;
+	/*background-color: #666666;*/
+	height: 40px;
+	/*border-bottom: solid 1px #CCCCCC;*/
+	overflow: hidden;
+}
+.wgTaskBox{
+	width: 100%;
+	float: left;
+	/*background-color: #3A87AD;*/
+	min-height: 100px;
+	/*border-bottom: solid 1px #CCCCCC;*/
+}
+.wgNoteBox{
+	width: 100%;
+	float: left;
+	/*background-color: #6F849D;*/
+	min-height: 100px;
+	/*border-bottom: solid 1px #CCCCCC;*/
+}
+.tTitle{
+	font-size: 30px;
+	/*margin-left: 3px;*/
+	margin-right: 25px;
+	float: left;
+}
+.tAddTask{
+	float: right;
+	font-size: 23px;
+	/*margin-right: 5px;*/
+	margin-top: 5px;
+	cursor: pointer;
+	width: 23px;
+	height: 30px;
+	/*background-color: red;*/
+}
+.wgHeader{
+	min-height: 25px;
+	width: 100%;
+	/*background-color: red;*/
+	height: auto;
+	float: left;
+	padding-bottom: 4px;
+	padding-top: 4px;
+}
+.wgHeader input{
+	float: left;
+	margin-top: 13px;
+	margin-left: 12px;
+	margin-right: 7px;
+}
+.tThisDay, .tActive{
+	font-size: 15px;
+	margin-top: 10px;
+	float: left;
+	cursor: pointer;
+}
+.widgetMenu{
+	/*min-width: 45px;*/
+	border: solid 1px #CCCCCC;
+	float: left;
+	/*padding: 3px;*/
+	margin-top: 8px;
+	text-align: center;
+	width: 24.5%;
+	cursor: pointer;
+	padding-bottom: 3px;
+	padding-top: 3px;
+}
+.widgetBorder{
+	border-left: solid 0px;
+}
+.widgetMargin{
+	/*margin-left: 6%;*/
+}
+.widgetMenuActive, .widgetMenu:hover{
+	background-color: #7a0038;
+	color: #FFFFFF;
+}
+.wgContent{
+	min-height: 40px;
+	width: 100%;
+	/*background-color: #0033FF;*/
+	float: left;
+	overflow: auto;
+}
+.wgObjItem{
+	width: 100%;
+	min-height: 35px;
+	/*background-color: #0B0B61;*/
+	border-bottom: solid 1px #E5E5E5;
+	margin-bottom: 1px;
+	float: left;
+}
+.wgObjChk{
+	width: 20px;
+	float: left;
+	height: 35px;
+	text-align: left;
+	cursor: pointer;
+}
+.wgObjCnt{
+	width: 260px;
+	height: 35px;
+	/*background-color: red;*/
+	float: left;
+	cursor: pointer;
+}
+.wgObjStar{
+	width: 30px;
+	height: 35px;
+	float: right;
+	/*background-color: #B4B2B2;*/
+}
+.overDue{
+	font-size: 10px;
+	color: red;
+	width: 97%;
+	line-height: 15px;
+	padding-left: 3%;
+}
+.wgObjTitle{
+	font-size: 13px;
+	width: 97%;
+	padding-left: 3%;
+	line-height: 20px;
+}
+
+.wgObjItemNote{
+	width: 100%;
+	min-height: 60px;
+	border-bottom: solid 1px #E5E5E5;
+	float: left;
+	padding-top: 4px;
+}
+.wgNoteDate{
+	width: 100%;
+	height: 17px;
+	float: left;
+}
+.wgNoteBottom{
+	width: 100%;
+	height: 17px;
+	float: left;
+	font-style: italic;
+}
+.wgNoteTag{
+	float: left;
+}
+.wgNoteCreatedDate{
+	float: right;
+}
+.wgNoteContent{
+	width: 100%;
+	min-height: 40px;
+	float: left;
+	cursor: pointer;
+}
+.wgObjNoteTitle{
+	width: 100%;
+	line-height: 35px;
+	font-size: 13px;
+	margin-left: 7px;
+}
+.wgNoteBody{
+	width: 260px;
+	min-height: 35px;
+	/*background-color: red;*/
+	float: left;
+	vertical-align: middle;
+}
+.objTotal{
+	font-size: 9px;
+	float: right;
+}
+.timeline {
+    position: absolute;    
+    border-top: 2px dashed red;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: 999;
+}

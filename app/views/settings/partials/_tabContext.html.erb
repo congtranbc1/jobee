@@ -1,0 +1,90 @@
+<div class="calDetail">
+	<div class="calDetaiCnt radius8">
+		<div class="calList">
+			<!-- create new context -->
+			<div id="createContext" style="width: 100%;min-height: 30px;border: solid 0px;display: none;">
+				<form method="post" action="settings/createContext" data-remote="true" >
+					<div style="width: 3%;min-height: 30px;float: left;"></div>
+					<div style="width: 87%;height: 40px;float: left;">
+						<i class="fa fa-star starLevel2"></i>
+						<input type="submit" style="display: none;" />
+						<input id="contextNm" name="contextNm" type="text" placeholder="Create context" style="width: 95%;"/>					
+					</div>
+					<div style="width: 5%;min-height: 30px;float: left;"></div>
+				</form>
+			</div>
+		
+			<table cellpadding="0" cellspacing="0" width="100%" border="0">
+				<%
+				if @contexts and @contexts.length > 0
+				%>
+				<tr class="calHeader">
+					<td width="3%" class="calCol1"></td>
+					<td width="87%" class="calCol2">VigCal</td>
+					<td width="5%" class="calCol3">
+						<!-- <a class="calNameObj" href="settings/tabCalendarDetail" data-remote="true"><i class="fa fa-plus"></i></a> -->
+					</td>
+				</tr>
+				<%
+					@contexts.each do |context|
+						id = context.primaryKey
+						ctNm = context.contextName
+				%>
+				<tr class="calRow">
+					<td class="calCol1">
+						<i class="fa fa-star starLevel1"></i>
+					</td>
+					<td class="calCol2">
+						<div id="calName<%= id %>" class="calName">
+							<label id="contextNumber<%= id %>">
+								<a class="calNameObj" id="calNameObj<%= id %>" onclick="editContext('<%= id %>', '<%= ctNm %>');" href="#"><%= ctNm %></a>
+							</label>
+						</div>
+					</td>
+					<td class="calCol3">
+						<a href="settings/delContext?id=<%= id %>" data-remote="true">
+						<i class="fa fa-trash-o"></i></a>
+					</td>
+				</tr>
+				<!-- <tr class="calRow">
+					<td class="calCol1">
+					</td>
+					<td class="calCol2">
+						<div class="calName">
+							<i class="fa fa-star-o"></i>
+							<label><a class="calNameObj" href="settings/tabCalendarDetail" data-remote="true">Work</a></label>
+						</div>
+					</td>
+					<td class="calCol3">
+						<i class="fa fa-trash-o"></i>
+					</td>
+				</tr>
+				<tr class="calRow">
+					<td class="calCol1">
+					</td>
+					<td class="calCol2">
+						<div class="calName">
+							<i class="fa fa-star starLevel2"></i>
+							<label><a class="calNameObj" href="settings/tabCalendarDetail" data-remote="true">Support</a></label>
+						</div>
+					</td>
+					<td class="calCol3">
+						<i class="fa fa-trash-o"></i>
+					</td>
+				</tr> -->
+				<%
+					end #for
+				else
+				%>
+				<tr class="calRow">
+					<td colspan="3" align="center">
+						No Context
+					</td>
+				</tr>
+				<%
+				end #if
+				%>
+			</table>
+		</div>
+	</div>
+</div>		

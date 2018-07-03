@@ -1,0 +1,1 @@
+{"requestUrl":"http://localhost:3000/api/tags/update.json?keyapi=c59c0141c0d0cd6ba408c9815c33d36c","requestMethod":"PUT","requestBody":"[ {\u000a    \"TagID\" : 5,\u000a    \"TagName\" : \"Los Angeles\"\u000a  },\u000a  { \u000a    \"TagID\" : 6,\u000a    \"TagName\" : \"Travel\"\u000a  }\u000a]","headers":["Content-Type","application/json"]}
