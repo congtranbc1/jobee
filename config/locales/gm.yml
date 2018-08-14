@@ -1,7 +1,4 @@
 
 gm:
-  Focus: Schärfe
-  SmartDay: SmartTag
-  SmartShare: SmartAktie
-  SmartNotes: SmartNoten
-  DoMail: DoMail
+  signIn: Schärfe
+  signUp: SmartTag

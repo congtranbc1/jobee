@@ -1,1 +1,0 @@
-{"requestUrl":"http://localhost:3000/api/context.xml?keyapi=c59c0141c0d0cd6ba408c9815c33d36c&field=ContextName,LastUpdate,UserID&ids=4,1","requestMethod":"GET","requestBody":"","headers":["Content-Type","application/xml"]}

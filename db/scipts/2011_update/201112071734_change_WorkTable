@@ -1,3 +1,0 @@
-ALTER TABLE `syncdata`.`WorkTable` DROP COLUMN `GTDTask`,
- DROP COLUMN `ContextID`,
- ADD COLUMN `RepeatByDue` tinyint(1)  DEFAULT 0 AFTER `CompletedDate`;

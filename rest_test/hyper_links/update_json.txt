@@ -1,1 +1,0 @@
-{"requestUrl":"http://localhost:3000/api/hyper_links/update.json","requestMethod":"PUT","requestBody":"[ { \"HyperLinkID\" : 3,\u000a    \"StartPosition\" : 10,\u000a    \"EndPosition\" : 30\u000a  },\u000a  { \"HyperLinkID\" : 4,\u000a    \"StartPosition\" : 20,\u000a    \"EndPosition\" : 40\u000a  }\u000a]","headers":["Content-Type","application/json"]}

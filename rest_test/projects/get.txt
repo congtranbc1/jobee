@@ -1,1 +1,0 @@
-{"requestUrl":"http://localhost:3000/api/projects.xml?keyapi=eed1ff331bb96d7978ab40bea6668e10&fields=ProjName,LastUpdate","requestMethod":"GET","requestBody":"","headers":["Content-Type","application/xml"]}

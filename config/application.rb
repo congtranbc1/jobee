@@ -27,10 +27,10 @@ module Smartweb
     # config.time_zone = 'Central Time (US & Canada)'
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
-    # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
+    config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+    config.i18n.default_locale = :en
     #config.i18n.enforce_available_locales = false
-    I18n.enforce_available_locales = false
+    # I18n.enforce_available_locales = false
     # JavaScript files you want as :defaults (application.js is always included).
     # config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
 
@@ -41,8 +41,8 @@ module Smartweb
     config.filter_parameters += [:password]
 
     # config load module
-    #config.autoload_paths += %W(#{config.root}/lib)
-    config.autoload_paths += Dir["#{config.root}/lib/**/"]
+    #config.autoload_paths += %W(#{config.root}/libs)
+    config.autoload_paths += Dir["#{config.root}/libs/**/"]
 
     # config load iquery
     config.action_view.javascript_expansions[:defaults] = %w(jquery-1.5.2.min rails)

@@ -1,2 +1,0 @@
-ALTER TABLE `WorkTable` MODIFY COLUMN `RepeatFlag` VARCHAR(7)  CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT '0000000';
-

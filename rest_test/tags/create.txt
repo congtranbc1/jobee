@@ -1,1 +1,0 @@
-{"requestUrl":"http://localhost:3000/api/tags.xml?keyapi=c59c0141c0d0cd6ba408c9815c33d36c","requestMethod":"POST","requestBody":"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\u000a<tags type=\"array\"/>\u000a\u0009<tag>\u000a\u0009\u0009\u000a\u0009</tag>\u000a</tags>","headers":["Content-Type","application/xml"]}

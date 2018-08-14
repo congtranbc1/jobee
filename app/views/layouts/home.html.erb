@@ -22,37 +22,11 @@
 	</head>
 	<body>
 		
-	    <%= render :partial => 'layouts/partials/header'%>
+	  <%= render :partial => 'layouts/partials/header'%>
 		
-	    <%= yield %>
+	  <%= yield %>
 		
 		<%= render :partial => 'layouts/partials/footer'%>
-		
-		
-		<script type="text/javascript" charset="utf-8">
-			$(document).ready(function(){
-				try{
-					//for home page
-					$('#homeBanner').cycle({
-						fx:     'scrollLeft', //,scrollDown,scrollRight,scrollUp,fade
-					    speed:  'slow',//'slow'
-				        timeout: 6000,
-				        pager:  '#nav'//,
-						// slideExpr: 'p'
-					});
-					
-				}
-				catch(err){
-					
-				}
-				
-				
-				
-				
-			});
-			
-			
-		</script>
-		
+
 	</body>
 </html>

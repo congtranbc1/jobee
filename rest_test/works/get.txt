@@ -1,1 +1,0 @@
-{"requestUrl":"http://localhost:3000/api/works.xml?type=1&last_update=1311302928","requestMethod":"GET","requestBody":"","headers":["Content-Type","application/xml"]}

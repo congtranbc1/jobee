@@ -1,1 +1,0 @@
-ALTER TABLE  `SW_Setting` ADD  `SendNotify` VARCHAR( 20 ) NOT NULL DEFAULT  '1111'

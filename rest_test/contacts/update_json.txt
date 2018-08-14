@@ -1,1 +1,0 @@
-{"requestUrl":"http://localhost:3000/api/contacts/update.json?apikey=YourKey","requestMethod":"PUT","requestBody":"[ {\"ContactID\" : 7,\u000a    \"Meta\" : \"Edit meta\",\u000a    \"Website\" : \"http://www.cong.com.vn\"\u000a  }\u000a]\u000a","headers":["Content-Type","application/json"]}

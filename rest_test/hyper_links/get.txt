@@ -1,1 +1,0 @@
-{"requestUrl":"http://localhost:3000/api/hyper_links.xml","requestMethod":"GET","requestBody":"","headers":["Content-Type","application/xml"]}

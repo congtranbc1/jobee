@@ -1,1 +1,0 @@
-{"requestUrl":"http://localhost:3000/api/token.xml?username=cong@cong.com&pass=cong&appreg=eed1ff331bb96d7978ab40bea6668e10&sig=986f11682bca478fec28336e85250e3c","requestMethod":"GET","requestBody":"","headers":[]}

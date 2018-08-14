@@ -1,77 +1,51 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 gem 'rails', '3.0.12'
-#gem 'rails', '4.0.0'
+gem 'mysql2', '0.2.24'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'i18n'
 
-gem 'mysql2', '0.2.6'
-gem 'zipruby'
-gem 'rmagick'
-gem 'hominid'
-gem 'ruby-growl', :group => "development"
-gem 'xmpp4r', :group => "development"
-gem "bullet", :group => "development"
-#gem "query_reviewer", :group => "development"
-# gem 'html_compressor'
 gem 'ice_cube', '0.7.6'
-gem 'will_paginate'
-gem 'ri_cal'
-gem 'delayed_job_active_record'
-gem 'daemons'
-gem 'geocoder'
+gem 'ri_cal','0.8.8'
 gem 'tzinfo'#, "0.3.37"
 gem "aes", "~> 0.5.0"
-gem 'uuid'
-
+gem 'uuid', '2.3.8'
 gem 'vcard', '~> 0.2.0'
+gem 'color', '1.8'
+gem 'mail', '2.2.20'
+gem "auto_html", '2.0.0'
 
-gem 'color'
-gem 'mail'
-gem "auto_html"
+gem 'invert','0.1.0' #sort multiple attributes
+gem 'pismo','0.7.4'
+gem 'metainspector', '4.7.2'
 
-#cache data
-gem 'dalli'
-
-#sort multi attributes
-gem 'invert'
-
-
-
-#push notification
-# gem 'heroku'
-# gem 'pusher'
-#gem 'json'
-#gem 'sinatra'
-
-# if RUBY_VERSION =~ /1.9/
-  # Encoding.default_external = Encoding::UTF_8
-  # Encoding.default_internal = Encoding::UTF_8
-# end
+gem 'net-http-digest_auth','1.4.1'
+gem 'icalendar', '2.0.1'
+gem 'vpim', '13.11.11'
+gem 'aescrypt','1.0.0'
+gem 'httparty', '0.14.0'
+gem 'clamp', '1.1.2'
+gem 'highline', '1.7.8'
+gem 'jwt','1.5.6'
+gem 'geocoder','1.4.3'
 
 
-#gem 'rake', '0.8.7'
+gem 'rumoji', '0.5.0'
+gem 'gemoji-parser', '1.3.1'
 
-# Use unicorn as the web server
-# gem 'unicorn'
+gem 'daemons', '1.2.4'
+gem 'dalli', '2.7.6' #cache data
+#gem 'agcaldav'
+gem 'nokogiri','1.6.8.1'
+gem 'httpclient', '2.8.3'
+gem 'will_paginate', '3.1.5'
 
-# Deploy with Capistrano
-# gem 'capistrano'
+gem 'silencer','1.0.0'
 
-# To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
-# gem 'ruby-debug'
-# gem 'ruby-debug19', :require => 'ruby-debug'
+gem "rest-client",'1.8.0'
+gem 'date_diff', '0.0.4'
 
-# Bundle the extra gems:
-# gem 'bj'
-# gem 'nokogiri'
-# gem 'sqlite3-ruby', :require => 'sqlite3'
-# gem 'aws-s3', :require => 'aws/s3'
+gem 'jbuilder', '2.6.4'
+gem 'browser', '1.1.0'
 
-# Bundle gems for the local environment. Make sure to
-# put test-only gems in this group so their generators
-# and rake tasks are available in development mode:
-# group :development, :test do
-#   gem 'webrat'
-# end
+gem 'faraday', '0.9.2'

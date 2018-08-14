@@ -49,27 +49,16 @@ Smartweb::Application.configure do
   
   config.action_mailer.raise_delivery_errors = true
 	config.action_mailer.perform_deliveries = true	  
-  config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.smtp_settings = {
-  	# :address							=> "mail.mysmartday.com",
-    # :port                 => 26,
-    # :domain              	=> "mysmartday.com",
-    # :host              		=> "mysmartday.com",
-    # :user_name            => 'noreply@mysmartday.com',
-    # :password             => 'sm4rtt1m3',
-    # :authentication       => 'plain',    
-    # :enable_starttls_auto => false  }
-  config.action_mailer.smtp_settings = {
-    :address             => "mail.leftcoastlogic.com",
-    :port                 => 26,
-    :domain               => "leftcoastlogic.com",
-    :host                 => "leftcoastlogic.com",
-    :user_name            => 'noreply@leftcoastlogic.com',
-    :password             => 'X@I]Bw9HgQis',
-    :authentication       => 'plain',    
-    :enable_starttls_auto => false  }
-    
-  # Mail chimp configuration
-	MAILCHIMP_API_KEY = '4927b10cd47f95780b45aec557fd575c-us2'
-  MAILCHIMP_LIST_ID = '2a540d4e95'
+  # config.action_mailer.delivery_method = :smtp
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+      :address => "mail.flomail.net",
+      :port => 25,
+      :domain => "flomail.net",
+      :authentication => :login,
+      :user_name => "cong@flomail.net",
+      :password => "Sm4rtt1m3",
+      :enable_starttls_auto => true,
+      :openssl_verify_mode  => 'none'
+  }
 end

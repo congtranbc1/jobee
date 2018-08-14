@@ -1,1 +1,0 @@
-{"requestUrl":"http://localhost:3000/api/contacts.json?apikey=YourKey&ids=5,6","requestMethod":"GET","requestBody":"","headers":["Content-Type","application/json"]}

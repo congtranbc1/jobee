@@ -1,1 +1,0 @@
-{"requestUrl":"http://localhost:3000/api/works/26,27.xml","requestMethod":"DELETE","requestBody":"","headers":["Content-Type","application/xml"]}

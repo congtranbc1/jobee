@@ -1,1 +1,0 @@
-{"requestUrl":"http://localhost:3000/api/contacts/6,7,8.json?apikey=YourKey","requestMethod":"DELETE","requestBody":"","headers":["Content-Type","application/json"]}
