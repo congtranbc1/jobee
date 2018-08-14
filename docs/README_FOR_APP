@@ -1,2 +1,33 @@
-Use this README file to introduce your application and point to useful places in the API for learning more.
-Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+Tran Quoc Cong
+Job bee
+Version 1.0
+##############################
+1 - Coding convention
+
+1.1 Ten ham:
+- Chu dau tien viet thuong, cac ki tu cua keyword duoc viet hoa
+- Bat dau tu dong tu
+1.2 Ten bien:
+- Chu dau tien viet thuong va cac ki tu cua keyword duoc viet hoa
+- Bat dau tu danh tu
+
+2 - Cau truc he thong:
+
+2.1 Thuc hien theo mo hinh MVC
+- Model
+- View
+- Controller
+
+2.2 Theo kien truc 3 layers 3 tiers
+- Se duoc tich hop them DTO
+- Dien giai nhu sau:
+ + Model: (DAO) se tuong tac voi DB o tang thap nhat
+ + >>>>>>DTO se tuong tac tu DAO va tang tren controller, xu ly luon logic business
+ + Controller: xu ly data va tra ve cho view, tuong tac voi DTO ma thoi
+ + View: xu ly show data len UI va tuong tac voi controller
+
+2.3 Xu ly da ngon ngu: config/locales
+
+2.4 Xu ly constant:
+- message
+- error code, object type
