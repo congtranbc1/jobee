@@ -1,7 +1,12 @@
 
 vi:
-  signIn: Dang nhap
-  signUp: Dang ky
+#top bar: tb_
+  tb_SignIn: Đăng nhập
+  tb_SignUp: Đăng ký
+#sign up screen: su_
+  su_SignUp: Đăng ký
+#sign in screen: si_
+  si_SignIn: Đăng nhập
 
 
         

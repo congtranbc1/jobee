@@ -1,14 +1,31 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <title>Vcproj</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="keywords" content="iPhone, iPad, OSX, Calendar" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+  <title><%= @titlePage ? (@titlePage) : '' %> [<%= APP_TITLE_NAME %>]</title>
+
+  <%= stylesheet_link_tag "jquery_ui/jquery-ui.theme", "css/font-awesome",
+                          "jobbee/home", "jobbee/header_footer","jobbee/login", "jobbee/usr_sign_in",
+                          "jobbee/usr_profile"
+      #,:cache => "generate/login"
+  %>
+
+  <%= javascript_include_tag :defaults,
+                             "jquery-1.11.3.min.js",
+                             "jobbee/login","jobbee/general"
+      #,:cache => "generate/login"
+  %>
+  <%= csrf_meta_tag %>
 </head>
 <body>
+<%= render :partial => 'layouts/partials/header'
+%>
 
 <%= yield %>
 
+<%= render :partial => 'layouts/partials/footer'%>
 </body>
 </html>

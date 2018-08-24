@@ -8,14 +8,16 @@
 		<title>AC Pro</title>
 		
 		<%= stylesheet_link_tag "jquery_ui/jquery-ui.theme", "css/font-awesome", 
-			"jobbee/home", "jobbee/header_footer",
-			:cache => "generate/beejobs" %>
+			"jobbee/home", "jobbee/header_footer"
+			#,:cache => "generate/beejobs"
+    %>
 		
-		<%= javascript_include_tag :defaults, 
-			"jquery_plugin/jquery.ui.core.min", "jquery_plugin/jquery.ui.widget.min","jquery_plugin/jquery.ui.mouse.min",
+		<%= javascript_include_tag :defaults,"jquery-1.11.3.min.js",
+			"jquery_plugin/jquery.ui.core.min", "jquery_plugin/jquery.ui.widget.min", "jquery_plugin/jquery.ui.mouse.min",
 			"jquery/jquery.nicescroll.min", "jquery_plugin/jquery.cycle.all",
-			"jobbee/general", "jobbee/profile",
-			:cache => "generate/beejobs"%>
+			"jobbee/general", "jobbee/profile"
+			#,:cache => "generate/beejobs"
+    %>
 			
 		<%= csrf_meta_tag %>
 		
@@ -27,6 +29,24 @@
 	  <%= yield %>
 		
 		<%= render :partial => 'layouts/partials/footer'%>
+
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function(){
+            try{
+                //for home page
+                $('#homeBanner').cycle({
+                    fx:     'scrollLeft', //,scrollDown,scrollRight,scrollUp,fade
+                    speed:  'slow',//'slow'
+                    timeout: 6000,
+                    pager:  '#nav'//,
+                    // slideExpr: 'p'
+                });
+            }
+            catch(err){
+
+            }
+        });
+    </script>
 
 	</body>
 </html>

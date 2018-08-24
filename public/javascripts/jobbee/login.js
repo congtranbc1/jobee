@@ -1,6 +1,8 @@
 
 
 $(document).ready(function() {
+
+    // sign up button
 	$('#signupBtn').click(function(){
 		// validate account
 		var isOk = validateAccount();
@@ -50,6 +52,7 @@ $(document).ready(function() {
 	
 /////////////////////////////////////////
 });
+
 
 //sign in feature
 function signIn(){

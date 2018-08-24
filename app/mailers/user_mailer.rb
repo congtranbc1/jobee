@@ -1,13 +1,13 @@
 class UserMailer < ActionMailer::Base
-  default :from => "no-reply@awesoft.vn"
+  default :from => DEFAULT_FROM_EMAIL
 
   def welcome_email(user)
     @user = user
     @url  = HTTP_HOST_NAME
-    email =  Base64.decode64(@user.UserName)
-    @activation_url  = @url + "/activate/" + @user.UserName + "/" + @user.ActivationCode
-    mail(:to => email.to_s.downcase,
-         :subject => "Welcome to AweCal Site")
+    @email =  @user.email
+    @activation_url  = @url + "/activate/" + @user.activateToken
+    mail(:to => @email.to_s.downcase,
+         :subject => "Welcome to JobBee")
   end
   
   def passcode_email(email, passcode)

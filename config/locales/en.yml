@@ -1,7 +1,10 @@
 
 en:
-  signIn: Sign in
-  signUp: Sign up
-
-
+#top bar: tb_
+  tb_SignIn: Sign in
+  tb_SignUp: Sign up
+#sign up screen: su_
+  su_SignUp: Join Today
+#sign in screen: si_
+  si_SignIn: Sign in
         

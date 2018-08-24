@@ -12,6 +12,11 @@ $(document).ready(function() {
 	// $("#miniMonth").niceScroll({cursoropacitymax:0.8,cursorwidth:1});
 	// $('body').niceScroll(config);
 
+    //change language
+    $('#lang').change(function(){
+        var lang = $('#lang').val();
+        changeLanguage(lang);
+    });
 
 	// user profile
 	$('#userAccount').click(function(){
@@ -30,4 +35,25 @@ $(document).ready(function() {
 	
 /////////////////////////////////////////
 });
+
+
+//change language
+function changeLanguage(lang) {
+    var url = "/utils/changeLanguage.json?locale=" + lang;
+    var data = {};
+    $.ajax({
+        url: url,
+        method: "POST",
+        data: data,
+        success: function(res){
+            var error = res.error;
+            if(error == 0){//user sign in successful
+                location.reload();
+            }
+        },
+        error: function(res){
+            //show error
+        }
+    });
+}
 
