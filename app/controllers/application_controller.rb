@@ -24,17 +24,13 @@ class ApplicationController < ActionController::Base
 
 
 
-  protect_from_forgery with: :exception
+  protect_from_forgery with: :reset_session
 
   #========== show error message ==============
   def warning
-    msg = flash[:notice]
-    if !msg
-      reset_session
-      cookies.delete(:ps)
-      flash[:notice] = '<p style="color:#CCCCCC;">No message</p>'.html_safe
-    end
-    @titlePage = "Notification"
+    res = params[:result] ? params[:result] : 0
+    @msg = showMessage(res)
+    @titlePage = t(:title_Notification)
     render(:file => "/errors/warning")
   end
 
@@ -62,6 +58,26 @@ class ApplicationController < ActionController::Base
     end
     @title_page = "Notification"
     render(:file => "/errors/warning")
+  end
+
+  # check case to show mesage
+  def showMessage(res)
+    msg = ""
+    reset_session
+    cookies.delete(:ps)
+    case res
+      when "1" # create new account successful
+        msg = t(:msg_CreateAccountOK)
+      when "2" # activation code invalid
+        msg = t(:msg_ActivationCodeInvalid)
+      when "3" # activate OK
+        msg = t(:msg_ActivatedOK)
+      when "4" # was activated
+        msg = t(:msg_WasActivated)
+      else # no message
+        msg = t(:msg_NoMessage).html_safe
+    end
+    return msg
   end
 
 end

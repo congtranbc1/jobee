@@ -1,6 +1,7 @@
-class UsersController < ApplicationController
+class UserController < ApplicationController
   require 'digest/md5'
   require 'digest'
+  require 'securerandom'
   
   
   layout "login"
@@ -23,7 +24,7 @@ class UsersController < ApplicationController
       email = email.to_s.strip.downcase
       h_pass = Digest::MD5.hexdigest(pass)
       sql = " email = '" + email.to_s + "' AND password ='" + h_pass.to_s + "'"
-      user = Users.where(sql).first
+      user = User.where(email: email.to_s).first
       if user and user.id
         session[SESSION_USER_EMAIL] = email
         session[SESSION_USER_ID] = user.id
@@ -89,7 +90,7 @@ class UsersController < ApplicationController
       h_pass = Digest::MD5.hexdigest(pass)
       #check email existed
       sql = "email = '" + email.to_s + "'"
-      user = Users.where(sql).first
+      user = User.where(email: email.to_s).first
       #user existed
       if user and user.id
         res = {:error => 1, :description => MSG_USER_EXISTED}
@@ -101,12 +102,12 @@ class UsersController < ApplicationController
         #save user into DB
         arr = email.split('@')
         uname = arr[0].to_s #set default name for user
-        usr = Users.new()
+        usr = User.new()
         usr.email = email
         usr.password = h_pass
         usr.lastName = (lname and lname.to_s.strip != '') ? lname.to_s.strip : ''
         usr.firstName = (fname and fname.to_s.strip != '') ? fname.to_s.strip : uname
-        usr.activateToken = Digest::MD5.hexdigest(ActiveSupport::SecureRandom.hex(16))
+        usr.activateToken = Digest::MD5.hexdigest(SecureRandom.hex(16))
         if usr.save
           #set session for email and password
           # session[SESSION_USER_EMAIL] = email
@@ -120,7 +121,8 @@ class UsersController < ApplicationController
           t_mail.run
 
           #check user register account, if it's ok, will redirect to vigcal index
-          redirect_to :controller => 'application', :action => 'warning'
+          # redirect_to :controller => 'application', :action => 'warning'
+          redirect_to controller: 'application', action: 'warning', result: 1
         else
 
         end
@@ -135,7 +137,7 @@ class UsersController < ApplicationController
     message = ''
     actCode = params[:activationToken]
     if actCode and actCode.to_s.strip != ''
-      user = Users.where('activateToken = ? ', actCode).first
+      user = User.where(activateToken: actCode).first
       if user and user.id
         if user.activateStatus.to_i == 0
           user.activateStatus = 1
@@ -163,7 +165,7 @@ class UsersController < ApplicationController
     if email
       email = email.to_s.strip.downcase
       sql = "email = '" + email.to_s + "'"
-      user = Users.where(sql).first
+      user = User.where(email: email.to_s).first
       if user
         res = {:error => 1, :description => MSG_USER_EXISTED }
       end
@@ -184,12 +186,12 @@ class UsersController < ApplicationController
     if email
       email = email.to_s.strip.downcase
       h_email = Base64.strict_encode64(email)
-      sql = " UserName = '" + h_email + "'"
+      sql = " email = '" + h_email + "'"
       if oldPass and oldPass.to_s.length > 0
         h_pass = Base64.strict_encode64(oldPass)
-        sql << " AND UserPass ='" + h_pass + "'"
+        sql << " AND password ='" + h_pass + "'"
       end
-      user = Users.where(sql).first
+      user = User.where(sql).first
       # puts user.to_json
       
       if user

@@ -7,4 +7,15 @@ en:
   su_SignUp: Join Today
 #sign in screen: si_
   si_SignIn: Sign in
-        
+
+# title page
+  title_Notification: Notification
+
+#message
+  msg_CreateAccountOK: Your account was created successfully. Please check your email to get activation link!
+  msg_ActivationCodeInvalid: Your activation code invalid!. Please contact with support team, thank you very much!
+  msg_ActivatedOK: Congratulations! Your account was activated successfully!
+  msg_WasActivated: Your account was activated!
+  msg_NoMessage: <p style="color:#CCCCCC;">No message</p>
+
+

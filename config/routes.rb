@@ -6,35 +6,35 @@ Smartweb::Application.routes.draw do
 
   #########################################################
   # utils controller
-  match '/utils/changeLanguage' => 'utils#changeLanguage'
+  match '/utils/changeLanguage' => 'utils#changeLanguage', via: [:post]
 
   #########################################################
   # user controller
-  match '/sign_in' => 'users#sign_in'
-  match '/sign_out' => 'users#sign_out'
-  match '/sign_up' => 'users#sign_up'
-  match '/recovery' => 'users#recovery'
-  match '/saveUserInfo' => 'users#saveUserInfo'
-  match '/sign_in_account' => 'users#sign_in_account'
-  match '/check_exist' => 'users#check_exist'
-  match '/update_user_profile' => 'users#update_user_profile'
-  match '/register' => 'users#register'
-  match '/profile' => 'users#profile'#
-  match '/activate/:activationToken' => 'users#activate'
+  match '/sign_in' => 'user#sign_in', via: [:get, :post]
+  match '/sign_out' => 'user#sign_out', via: [:get, :post]
+  match '/sign_up' => 'user#sign_up', via: [:get, :post]
+  match '/recovery' => 'user#recovery', via: [:get, :post]
+  match '/saveUserInfo' => 'user#saveUserInfo', via: [:get, :post]
+  match '/sign_in_account' => 'user#sign_in_account', via: [:get, :post]
+  match '/check_exist' => 'user#check_exist', via: [:get, :post]
+  match '/update_user_profile' => 'user#update_user_profile', via: [:get, :post, :put]
+  post '/register' => 'user#register'
+  match '/profile' => 'user#profile', via: [:get, :post]
+  match '/activate/:activationToken' => 'user#activate', via: [:get, :post]
 
   #########################################################
   # application controller
-  match '/warning', :controller => :application, :action => :warning
-  match '/activated', :controller => :application, :action => :activated
-  match '/confirmation', :controller => :application, :action => :confirmation
-  match '/notification', :controller => :application, :action => :warning
+  get '/warning', :controller => :application, :action => :warning
+  get '/activated', :controller => :application, :action => :activated
+  get '/confirmation', :controller => :application, :action => :confirmation
+  get '/notification', :controller => :application, :action => :warning
 
   #########################################################
   # home controller
   
   #########################################################
   # common match
-  match ':controller(/:action(/:id))'
+  get ':controller(/:action(/:id))'
   
   
 end

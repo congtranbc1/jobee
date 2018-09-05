@@ -1,6 +1,6 @@
-class Users < ActiveRecord::Base
-  set_table_name "users"
-  set_primary_key "id"
+class User < ActiveRecord::Base
+  self.table_name = "users"
+  self.primary_key = "id"
 
 
   before_create :set_create_time

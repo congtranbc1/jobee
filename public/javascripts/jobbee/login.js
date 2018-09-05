@@ -49,6 +49,22 @@ $(document).ready(function() {
 	$("#userAccount").click(function(e){
 	  e.stopPropagation();
 	});
+
+	// recoveryBtn
+	$('#recoveryBtn').click(function(){
+		// validate account
+		var isOk = validateAccount();
+		//submit form
+		if (isOk){
+			// check user exist
+
+			// send recovery password
+			recoveryPass();	
+		} else {
+			var msgError = $('#msgError');
+			msgError.text('Email invalid!');//reset msg
+		}
+	});
 	
 /////////////////////////////////////////
 });
@@ -60,7 +76,7 @@ function signIn(){
 	var email = $.trim(emailObj.val());
 	var passObj = $('#si_password');
 	var pass = $.trim(passObj.val());
-	var url = "/users/sign_in_account.json?email=" + email + "&pass=" + pass;
+	var url = "/sign_in_account.json?email=" + email + "&pass=" + pass;
 	var data = {};
 	var msgObj = $('#msgError');
 	msgObj.text('');
@@ -87,7 +103,7 @@ function signIn(){
 //check user existed
 function check_exist(email){
 	var email = $.trim(email);
-	var url = "/users/check_exist.json?email=" + email ;
+	var url = "/check_exist.json?email=" + email ;
 	var data = {};
 	var msgObj = $('#msgError');
 	msgObj.text('');
@@ -161,4 +177,32 @@ function validateEmail(sEmail) {
     } else {
         return false;
     }
+}
+
+// recoveryPass, recovery password of the user
+function recoveryPass(){
+	var emailObj = $('#email');
+	var email = $.trim(emailObj.val());
+	var url = "/sign_in_account.json?email=" + email + "&pass=" + pass;
+	var data = {};
+	var msgObj = $('#msgError');
+	msgObj.text('');
+	
+	$.ajax({
+		url: url, 
+		method: "POST",
+		data: data,
+		success: function(res){
+			var error = res.error;
+			if(error == 0){//user sign in successful 
+				location.href = "/profile";
+			} else { // show wrong password
+				msgObj.show();
+				msgObj.text(res.description);
+			}
+		},
+        error: function(res){
+        	//show error
+        }
+    });
 }

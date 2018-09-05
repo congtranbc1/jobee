@@ -38,20 +38,21 @@ module Smartweb
     config.encoding = "utf-8"
 
     # Configure sensitive parameters which will be filtered from the log file.
-    config.filter_parameters += [:password]
+    config.filter_parameters += [:password, :pass]
 
     # config load module
     #config.autoload_paths += %W(#{config.root}/libs)
     config.autoload_paths += Dir["#{config.root}/libs/**/"]
 
     # config load iquery
-    config.action_view.javascript_expansions[:defaults] = %w(jquery-1.5.2.min rails)
+    # config.action_view.javascript_expansions[:defaults] = %w(jquery-1.5.2.min rails)
+    config.action_view.javascript_expansions = { :defaults => %w(jquery-1.5.2.min rails) }
     
     # skip model name when render JSON
     ActiveRecord::Base.include_root_in_json = false
     
     # config log rotation
-    config.logger = Logger.new(config.paths.log.first, 50, 1048576)
+    # config.logger = Logger.new(config.paths.log.first, 50, 1048576)
     
   end
 end

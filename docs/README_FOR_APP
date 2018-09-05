@@ -1,6 +1,12 @@
 Tran Quoc Cong
-Job bee
+Job bee / baboo
 Version 1.0
+##############################
+
+cd /home/acpro/lcl_comp/source_code/myProj/jobee/jobee 
+
+rails s -p7777
+
 ##############################
 1 - Coding convention
 
